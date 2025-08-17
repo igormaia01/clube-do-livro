@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuração - Clube do Livro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h3 class="mb-0">
+                <i class="fas fa-cog me-2"></i>Configuração do Firebase
+              </h3>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Importante:</strong> Configure suas credenciais do
+                Firebase antes de usar a aplicação.
+              </div>
+
+              <h5>1. Criar projeto no Firebase</h5>
+              <ol>
+                <li>
+                  Acesse o
+                  <a href="https://console.firebase.google.com/" target="_blank"
+                    >Firebase Console</a
+                  >
+                </li>
+                <li>Clique em "Criar um projeto"</li>
+                <li>Dê um nome ao seu projeto (ex: "clube-do-livro")</li>
+                <li>Desative o Google Analytics (não necessário)</li>
+                <li>Clique em "Criar projeto"</li>
+              </ol>
+
+              <h5>2. Configurar Authentication</h5>
+              <ol>
+                <li>No painel lateral, clique em "Authentication"</li>
+                <li>Clique em "Começar"</li>
+                <li>Na aba "Sign-in method", ative "Email/senha"</li>
+                <li>Marque "Ativar" e salve</li>
+              </ol>
+
+              <h5>3. Configurar Firestore</h5>
+              <ol>
+                <li>No painel lateral, clique em "Firestore Database"</li>
+                <li>Clique em "Criar banco de dados"</li>
+                <li>Selecione "Começar no modo de teste"</li>
+                <li>Escolha uma localização (ex: southamerica-east1)</li>
+                <li>Clique em "Concluído"</li>
+              </ol>
+
+              <h5>4. Obter configurações</h5>
+              <ol>
+                <li>
+                  Vá para "Configurações do projeto" (ícone de engrenagem)
+                </li>
+                <li>Role para baixo até "Seus apps"</li>
+                <li>Clique no ícone web (&lt;/&gt;)</li>
+                <li>Dê um nome ao app (ex: "clube-do-livro-web")</li>
+                <li>Copie as configurações que aparecerem</li>
+              </ol>
+
+              <h5>5. Atualizar configurações no código</h5>
+              <p>
+                Edite o arquivo <code>js/firebase-config.js</code> e substitua
+                as configurações:
+              </p>
+
+              <div class="bg-dark text-light p-3 rounded">
+                <pre><code>const firebaseConfig = {
+    apiKey: "sua-api-key-aqui",
+    authDomain: "seu-projeto.firebaseapp.com",
+    projectId: "seu-projeto-id",
+    storageBucket: "seu-projeto.appspot.com",
+    messagingSenderId: "123456789",
+    appId: "seu-app-id"
+};</code></pre>
+              </div>
+
+              <div class="alert alert-warning mt-4">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <strong>Regras de Segurança:</strong> Por padrão, o Firestore
+                fica aberto por 30 dias. Depois disso, você precisará configurar
+                regras de segurança adequadas.
+              </div>
+
+              <h5>6. Regras de Segurança (Firestore Rules)</h5>
+              <p>
+                Substitua as regras padrão por estas no console do Firestore:
+              </p>
+
+              <div class="bg-dark text-light p-3 rounded">
+                <pre><code>rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /clubs/{clubId} {
+      allow read, write: if request.auth != null 
+        && (request.auth.uid in resource.data.members 
+            || request.auth.uid == resource.data.createdBy);
+    }
+    
+    match /votes/{voteId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}</code></pre>
+              </div>
+
+              <div class="text-center mt-4">
+                <a href="index.html" class="btn btn-primary">
+                  <i class="fas fa-arrow-left me-2"></i>Voltar para o App
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

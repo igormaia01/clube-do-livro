@@ -1,0 +1,35 @@
+{
+  "name": "clube-do-livro",
+  "version": "1.0.0",
+  "description": "Aplicação web para gerenciar clubes de leitura",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8080",
+    "build": "echo 'Projeto não requer build - HTML/CSS/JS puro'",
+    "deploy": "gh-pages -d .",
+    "test": "echo 'Testes não configurados ainda'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/clube-do-livro.git"
+  },
+  "keywords": [
+    "club",
+    "livro",
+    "leitura",
+    "votacao",
+    "firebase",
+    "javascript"
+  ],
+  "author": "Seu Nome <seu-email@exemplo.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "gh-pages": "^6.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

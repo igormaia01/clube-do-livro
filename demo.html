@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo - Clube do Livro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><i class="fas fa-book-open me-2"></i>Clube do Livro - DEMO</a
+        >
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="alert alert-info">
+        <i class="fas fa-info-circle me-2"></i>
+        <strong>Demonstração:</strong> Esta é uma prévia visual de como a
+        aplicação funcionará. Para funcionalidade completa, configure o Firebase
+        seguindo o <a href="DEPLOY.md">guia de deploy</a>.
+      </div>
+
+      <!-- Demo Home Section -->
+      <div class="row mb-5">
+        <div class="col-md-8">
+          <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0">
+                <i class="fas fa-star me-2"></i>Livro da Semana
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <img
+                    src="https://via.placeholder.com/80x120/007bff/ffffff?text=1984"
+                    alt="1984"
+                    class="book-cover"
+                  />
+                </div>
+                <div class="col">
+                  <h5 class="mb-1">1984</h5>
+                  <p class="text-muted mb-1">por George Orwell</p>
+                  <small class="text-muted">
+                    <i class="fas fa-calendar me-1"></i>
+                    Definido em 15/08/2025
+                  </small>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-outline-success btn-sm">
+                    <i class="fas fa-check me-1"></i>Concluído
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <i class="fas fa-comments me-2"></i>Atividade Recente
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="activity-item">
+                <div class="d-flex justify-content-between align-items-start">
+                  <p class="mb-1">
+                    O clube "Leitores Unidos" terminou de ler "1984"
+                  </p>
+                  <small class="activity-time">2h atrás</small>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="d-flex justify-content-between align-items-start">
+                  <p class="mb-1">
+                    Nova votação criada: "Próximo livro de ficção científica"
+                  </p>
+                  <small class="activity-time">5h atrás</small>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="d-flex justify-content-between align-items-start">
+                  <p class="mb-1">
+                    João Silva entrou no clube "Clássicos Modernos"
+                  </p>
+                  <small class="activity-time">1d atrás</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="fas fa-poll me-2"></i>Votação Ativa
+              </h6>
+            </div>
+            <div class="card-body">
+              <h6 class="mb-2">Próximo Livro de Ficção</h6>
+              <p class="small text-muted mb-2">3 opções</p>
+              <p class="small mb-2">
+                <i class="fas fa-users me-1"></i>
+                7 votos
+              </p>
+              <button class="btn btn-primary btn-sm w-100">Ver Votação</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mb-0">
+                <i class="fas fa-users me-2"></i>Estatísticas
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Membros:</span>
+                <span>12</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Livros Lidos:</span>
+                <span>8</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Votações:</span>
+                <span>3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Clubs Section -->
+      <h2 class="mb-4">Meus Clubes</h2>
+      <div class="row mb-5">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card club-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Leitores Unidos</h5>
+              <p class="card-text text-muted">
+                Clube focado em ficção contemporânea e clássicos modernos
+              </p>
+              <div
+                class="d-flex justify-content-between align-items-center mt-3"
+              >
+                <small class="text-muted">
+                  <i class="fas fa-users me-1"></i>8 membros
+                </small>
+                <small class="text-muted">
+                  <i class="fas fa-book me-1"></i>5 livros
+                </small>
+              </div>
+              <div class="mt-2">
+                <small class="text-success">
+                  <i class="fas fa-book-open me-1"></i>
+                  Lendo: 1984
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card club-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Clássicos Modernos</h5>
+              <p class="card-text text-muted">
+                Explorando grandes obras da literatura mundial
+              </p>
+              <div
+                class="d-flex justify-content-between align-items-center mt-3"
+              >
+                <small class="text-muted">
+                  <i class="fas fa-users me-1"></i>4 membros
+                </small>
+                <small class="text-muted">
+                  <i class="fas fa-book me-1"></i>3 livros
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card club-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Sci-Fi Lovers</h5>
+              <p class="card-text text-muted">
+                Ficção científica e fantasia contemporânea
+              </p>
+              <div
+                class="d-flex justify-content-between align-items-center mt-3"
+              >
+                <small class="text-muted">
+                  <i class="fas fa-users me-1"></i>12 membros
+                </small>
+                <small class="text-muted">
+                  <i class="fas fa-book me-1"></i>7 livros
+                </small>
+              </div>
+              <div class="mt-2">
+                <small class="text-warning">
+                  <i class="fas fa-poll me-1"></i>
+                  Votação ativa
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Voting Section -->
+      <h2 class="mb-4">Votação: Próximo Livro de Ficção Científica</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Escolha o próximo livro</h5>
+            </div>
+            <div class="card-body">
+              <div class="voting-option selected mb-3">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img
+                      src="https://via.placeholder.com/60x90/28a745/ffffff?text=Duna"
+                      alt="Duna"
+                      class="book-cover"
+                      style="width: 60px; height: 90px"
+                    />
+                  </div>
+                  <div class="col">
+                    <h6 class="mb-1">Duna</h6>
+                    <p class="text-muted mb-1">Frank Herbert</p>
+                    <small class="text-muted">Épico de ficção científica</small>
+                  </div>
+                  <div class="col-auto">
+                    <div class="text-center">
+                      <div class="fw-bold text-primary">5 votos</div>
+                      <div class="progress" style="width: 60px">
+                        <div class="progress-bar" style="width: 71%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="voting-option mb-3">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img
+                      src="https://via.placeholder.com/60x90/dc3545/ffffff?text=Found"
+                      alt="Foundation"
+                      class="book-cover"
+                      style="width: 60px; height: 90px"
+                    />
+                  </div>
+                  <div class="col">
+                    <h6 class="mb-1">Fundação</h6>
+                    <p class="text-muted mb-1">Isaac Asimov</p>
+                    <small class="text-muted"
+                      >Clássico da ficção científica</small
+                    >
+                  </div>
+                  <div class="col-auto">
+                    <div class="text-center">
+                      <div class="fw-bold">2 votos</div>
+                      <div class="progress" style="width: 60px">
+                        <div class="progress-bar" style="width: 29%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="voting-option">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img
+                      src="https://via.placeholder.com/60x90/ffc107/ffffff?text=Neuro"
+                      alt="Neuromancer"
+                      class="book-cover"
+                      style="width: 60px; height: 90px"
+                    />
+                  </div>
+                  <div class="col">
+                    <h6 class="mb-1">Neuromancer</h6>
+                    <p class="text-muted mb-1">William Gibson</p>
+                    <small class="text-muted">Cyberpunk clássico</small>
+                  </div>
+                  <div class="col-auto">
+                    <div class="text-center">
+                      <div class="fw-bold">0 votos</div>
+                      <div class="progress" style="width: 60px">
+                        <div class="progress-bar" style="width: 0%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 text-center">
+                <button class="btn btn-success me-2">
+                  <i class="fas fa-check me-2"></i>Confirmar Voto
+                </button>
+                <button class="btn btn-outline-secondary">
+                  <i class="fas fa-eye me-2"></i>Ver Resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h6 class="mb-0">Informações da Votação</h6>
+            </div>
+            <div class="card-body">
+              <p class="small"><strong>Clube:</strong> Sci-Fi Lovers</p>
+              <p class="small"><strong>Criada por:</strong> Maria Santos</p>
+              <p class="small"><strong>Data:</strong> 15/08/2025</p>
+              <p class="small">
+                <strong>Participantes:</strong> 7 de 12 membros
+              </p>
+
+              <div class="alert alert-info small mt-3">
+                <i class="fas fa-info-circle me-1"></i>
+                A votação será encerrada quando todos os membros votarem ou em 7
+                dias.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mb-0">Convite para o Clube</h6>
+            </div>
+            <div class="card-body">
+              <p class="small text-muted mb-3">
+                Compartilhe este código para convidar novos membros:
+              </p>
+              <div class="invite-code">SCIFI2025</div>
+              <button class="btn btn-outline-primary btn-sm w-100 mt-2">
+                <i class="fas fa-copy me-1"></i>Copiar Código
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 py-4">
+        <div class="alert alert-success">
+          <h4><i class="fas fa-rocket me-2"></i>Pronto para começar?</h4>
+          <p class="mb-3">
+            Siga o <a href="DEPLOY.md">guia de deploy</a> para configurar sua
+            aplicação e começar a usar!
+          </p>
+          <a href="setup.html" class="btn btn-primary me-2">
+            <i class="fas fa-cog me-2"></i>Configurar Firebase
+          </a>
+          <a href="index.html" class="btn btn-outline-primary">
+            <i class="fas fa-play me-2"></i>Ir para Aplicação
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
